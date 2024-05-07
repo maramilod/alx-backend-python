@@ -1,6 +1,11 @@
+#!/usr/bin/env python3
+"""
+hey
+"""
 import random
 import asyncio
 from typing import List
+
 
 async def async_generator() -> List[float]:
     """
@@ -12,11 +17,11 @@ async def async_generator() -> List[float]:
         li.append(random.uniform(0, 10))
         yield li[-1]
 
+
 async def print_yielded_values():
     async for i in async_generator():
         print(i)
 
-# Run the event loop
+
 if __name__ == "__main__":
     asyncio.run(print_yielded_values())
-
