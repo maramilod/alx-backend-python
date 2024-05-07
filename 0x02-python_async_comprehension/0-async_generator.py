@@ -14,16 +14,14 @@ async def async_generator() -> List[float]:
     An asynchronous generator that yields a list
     of random floats over time.
     """
-    li: List[float] = []
     for _ in range(10):
         await asyncio.sleep(1)
-        li.append(random.uniform(0, 10))
-        yield li[-1]
+        yield(random.uniform(0, 10))
 
 
 async def print_yielded_values():
     """
-     yield a random number
+     Print the yielded random numbers.
     """
     async for i in async_generator():
         print(i)
